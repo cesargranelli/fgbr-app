@@ -1,0 +1,8 @@
+{
+  "name": "futebol",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "da53efda"
+}
