@@ -1,5 +1,12 @@
+import { Scout } from "./scout.model";
+
 export interface Player {
     id: number;
-    slug: string;
     name: string;
+    number: number;
+    path: string;
+    points: number;
+    position: string;
+    scouts: Array<Scout>;
+    slug: string;
 }

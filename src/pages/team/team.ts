@@ -1,7 +1,9 @@
+import { PlayerPage } from './../player/player';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Team } from './../../models/team.model';
+import { Player } from './../../models/player.model';
 
 @IonicPage()
 @Component({
@@ -16,13 +18,38 @@ export class TeamPage {
     name: "Rockman DX",
     players: [{
       id: 1,
-      slug: "rogerio-ceni",
-      name: "Rogério Ceni"
+      name: "Rogério Ceni",
+      number: 1,
+      path: "assets/imgs/player-face.png",
+      points: 12.53,
+      position: "GOL",
+      scouts: [
+        {
+          equality: 1.2,
+          id: 1,
+          path: "",
+          points: 4,
+          type: "FF"
+        },
+        {
+          equality: 1.5,
+          id: 2,
+          path: "",
+          points: 8,
+          type: "GO"
+        }
+      ],
+      slug: "rogerio-ceni"
     },
     {
       id: 2,
-      slug: "iago-pikachu",
-      name: "Pikachu"
+      name: "Pikachu",
+      number: 2,
+      path: "assets/imgs/player-face.png",
+      points: 3.12,
+      position: "LAT",
+      scouts: [],
+      slug: "iago-pikachu"
     }]
   };
 
@@ -32,6 +59,10 @@ export class TeamPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.slug = this.navParams.get("slug");
     this.team = this.dados;
+  }
+
+  detail(player: Player) {
+    this.navCtrl.push(PlayerPage, {player: player});
   }
 
 }

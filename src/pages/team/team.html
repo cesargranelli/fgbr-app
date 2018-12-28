@@ -7,8 +7,18 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
-  <ion-item *ngFor="let player of team.players">{{ player.name }}</ion-item>
+  <ion-item *ngFor="let player of team.players">
+    <ion-avatar item-start>
+      <img src="{{ player.path }}">
+    </ion-avatar>
+    <button ion-button clear full (click)="detail(player)">
+      <ion-item>{{ player.name }}</ion-item>
+    </button>
+    <ion-avatar item-end>
+      {{ player.position }}
+    </ion-avatar>
+  </ion-item>
 
 </ion-content>
