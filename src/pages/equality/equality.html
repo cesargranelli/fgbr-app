@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>equality</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-card id="{{ player.slug }}">
+        <ion-item>
+          <img src="assets/imgs/player-face.png">
+        </ion-item>
+        <ion-item>
+          <ion-row *ngFor="let scout of player.scouts">
+            <ion-col>
+              <button ion-button clear block disabled>
+                {{ scout.type }}
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button outline block>
+                <ion-icon name="remove"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button outline block disabled>
+                <div>{{ scout.equality }}</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button outline block>
+                <ion-icon name="add"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-card>
+    
+    </ion-content>

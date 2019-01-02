@@ -28,7 +28,7 @@ export class TeamPage {
           equality: 1.2,
           id: 1,
           path: "",
-          points: 4,
+          points: 4.53,
           type: "FF"
         },
         {

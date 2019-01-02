@@ -6,37 +6,23 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
   <ion-card id="{{ player.slug }}">
     <ion-item>
+      <button ion-button outline (click)="equality(player)">
+        Equalizar
+      </button>
       <img src="assets/imgs/player-face.png">
     </ion-item>
-    <ion-row>
-      <ion-col>
-        <button large ion-button outline block>
-          <ion-icon name="remove"></ion-icon>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button large disabled ion-button icon-start outline>
-          <div>1.0</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button large ion-button outline block>
-          <ion-icon name="add"></ion-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-item>
-        <ion-label>Scout</ion-label>
-        <ion-select [(ngModel)]="scout" interface="popover">
-          <ion-option *ngFor="let scout of player.scouts" [value]="scout.type">{{ scout.type }}</ion-option>
-        </ion-select>
-      </ion-item>
-    </ion-row>
+    <ion-item>
+      <ion-grid>
+        <ion-row *ngFor="let scout of player.scouts">
+            <ion-col col-6>{{ scout.type }}</ion-col>
+            <ion-col col-6>Pontos: {{ scout.points * scout.equality | number: '.2-2' }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
   </ion-card>
 
 </ion-content>

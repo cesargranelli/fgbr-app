@@ -1,23 +1,18 @@
-import { EqualityPage } from './../equality/equality';
-import { Player } from './../../models/player.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Player } from '../../models/player.model';
 
 @IonicPage()
 @Component({
-  selector: 'page-player',
-  templateUrl: 'player.html',
+  selector: 'page-equality',
+  templateUrl: 'equality.html',
 })
-export class PlayerPage {
+export class EqualityPage {
 
   player: Player;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.player = this.navParams.get("player");
-  }
-
-  equality(player: Player) {
-    this.navCtrl.push(EqualityPage, {player: player});
   }
 
 }
